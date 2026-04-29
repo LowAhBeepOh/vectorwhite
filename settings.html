@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Vectorwhite</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="theme-dark">
+    <div id="app">
+        <section class="screen">
+            <header class="editor-top-bar">
+                <div class="top-bar-left">
+                    <button class="icon-btn" onclick="window.history.back()"><span class="material-symbols-outlined">arrow_back</span></button>
+                    <span class="brand-small">Settings</span>
+                </div>
+                <div class="top-bar-right">
+                </div>
+            </header>
+
+            <div class="settings-container">
+                <aside class="settings-sidebar">
+                    <div class="settings-nav-item active" data-tab="general">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span>General</span>
+                    </div>
+                    <div class="settings-nav-item" data-tab="appearance">
+                        <span class="material-symbols-outlined">palette</span>
+                        <span>Appearance</span>
+                    </div>
+                    <div class="settings-nav-item" data-tab="data">
+                        <span class="material-symbols-outlined">database</span>
+                        <span>Data Management</span>
+                    </div>
+                    <div class="settings-nav-item" data-tab="about">
+                        <span class="material-symbols-outlined">info</span>
+                        <span>About</span>
+                    </div>
+                    <div class="settings-nav-item" data-tab="credits">
+                        <span class="material-symbols-outlined">history_edu</span>
+                        <span>Credits</span>
+                    </div>
+                </aside>
+                
+                <main class="settings-content">
+                    <!-- General Tab -->
+                    <div id="tab-general" class="settings-tab active">
+                        <h2 class="settings-section-title">General</h2>
+                        <div class="settings-group">
+                            <h3>Project Defaults</h3>
+                            <div class="form-group">
+                                <label>Default Frame Rate</label>
+                                <select>
+                                    <option>8 fps</option>
+                                    <option>12 fps</option>
+                                    <option>16 fps</option>
+                                    <option>20 fps</option>
+                                    <option selected>24 fps</option>
+                                    <option>30 fps</option>
+                                    <option>40 fps</option>
+                                    <option>50 fps</option>
+                                    <option>60 fps</option>
+                                    <option>90 fps</option>
+                                    <option>120 fps</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Tab -->
+                    <div id="tab-appearance" class="settings-tab">
+                        <h2 class="settings-section-title">Appearance</h2>
+                        <div class="settings-group">
+                            <h3>Application Theme</h3>
+                            <div class="theme-grid">
+                                <div class="theme-card" onclick="setTheme('dark')">
+                                    <div class="theme-preview theme-dark-preview">
+                                        <div class="left-half"></div>
+                                        <div class="right-half"></div>
+                                    </div>
+                                    <span>Dark</span>
+                                </div>
+                                <div class="theme-card" onclick="setTheme('deep')">
+                                    <div class="theme-preview theme-deep-preview">
+                                        <div class="left-half"></div>
+                                        <div class="right-half"></div>
+                                    </div>
+                                    <span>Deep</span>
+                                </div>
+                                <div class="theme-card" onclick="setTheme('light')">
+                                    <div class="theme-preview theme-light-preview">
+                                        <div class="left-half"></div>
+                                        <div class="right-half"></div>
+                                    </div>
+                                    <span>Light</span>
+                                </div>
+                                <div class="theme-card" onclick="setTheme('cream')">
+                                    <div class="theme-preview theme-cream-preview">
+                                        <div class="left-half"></div>
+                                        <div class="right-half"></div>
+                                    </div>
+                                    <span>Cream</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Management Tab -->
+                    <div id="tab-data" class="settings-tab">
+                        <h2 class="settings-section-title">Data Management</h2>
+                        <div class="settings-group">
+                            <h3>Local Storage</h3>
+                            <p style="margin-bottom: 20px; color: var(--text-dim);">Clear all projects and preferences stored in your browser.</p>
+                            <button class="btn-secondary" style="color: var(--accent); border-color: var(--accent);">Clear Cache</button>
+                        </div>
+                    </div>
+
+                    <!-- About Tab -->
+                    <div id="tab-about" class="settings-tab">
+                        <h2 class="settings-section-title">About</h2>
+                        <div class="settings-group">
+                            <h3>Vectorwhite</h3>
+                            <p style="color: var(--text-dim); line-height: 1.6;">Version 0.0.0 (Design only)<br>A professional-grade vector animation tool for the modern web.</p>
+                        </div>
+                    </div>
+
+                    <!-- Credits Tab -->
+                    <div id="tab-credits" class="settings-tab">
+                        <h2 class="settings-section-title">Credits</h2>
+                        <div class="settings-group">
+                            <h3>Design & Development</h3>
+                            <p><a href="https://github.com/LowAhBeepOh" target="_blank" class="credit-link">LowAhBeepOh</a></p>
+                        </div>
+                        <div class="settings-group">
+                            <h3>Assets</h3>
+                            <p style="color: var(--text-dim);">Google Material Symbols (Icons)</p>
+                            <p style="color: var(--text-dim);">Google Fonts (Inter Tight, Manrope)</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple tab switching for settings
+        document.querySelectorAll('.settings-nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const tabId = item.getAttribute('data-tab');
+                
+                // Update nav
+                document.querySelectorAll('.settings-nav-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                
+                // Update content
+                document.querySelectorAll('.settings-tab').forEach(tab => tab.classList.remove('active'));
+                document.getElementById(`tab-${tabId}`).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

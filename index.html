@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectorwhite</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="theme-dark">
+    <!-- App Container -->
+    <div id="app">
+        <!-- Screen: Landing / Home -->
+        <section id="screen-home" class="screen">
+            <div class="home-container">
+                <header class="home-header">
+                    <h1 class="brand">Vectorwhite</h1>
+                    <div class="header-actions">
+                        <button class="icon-btn" onclick="location.href='settings.html'"><span class="material-symbols-outlined">settings</span></button>
+                    </div>
+                </header>
+                <main class="home-content">
+                    <div class="welcome-section">
+                        <h2>Welcome back</h2>
+                        <div class="primary-actions">
+                            <button class="btn-primary" onclick="openNewProjectModal()">
+                                <span class="material-symbols-outlined">add</span>
+                                New Project
+                            </button>
+                            <button class="btn-secondary">
+                                <span class="material-symbols-outlined">file_open</span>
+                                Open Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="recent-projects">
+                        <h3>Recent Projects</h3>
+                        <div class="project-grid" id="recent-projects-list">
+                            <div class="project-card" onclick="location.href='editor.html'">
+                                <div class="project-thumb"></div>
+                                <div class="project-info">
+                                    <span class="project-name">My Animation</span>
+                                    <span class="project-date">2 mins ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <!-- Modals Overlay -->
+        <div id="modal-overlay" class="modal-overlay">
+            <!-- New Project Modal -->
+            <div id="modal-new-project" class="modal">
+                <div class="modal-header">
+                    <h2>New Project</h2>
+                    <button class="icon-btn" onclick="closeModals()"><span class="material-symbols-outlined">close</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Project Name</label>
+                        <input type="text" placeholder="My Awesome Animation">
+                    </div>
+                    <div class="form-group">
+                        <label>Preset</label>
+                        <select id="new-project-preset">
+                            <option value="16:9">1920x1080 (16:9)</option>
+                            <option value="1:1">1080x1080 (1:1)</option>
+                            <option value="9:16">1080x1920 (9:16)</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary full-width mt-large" onclick="createNewProject()">Create Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
